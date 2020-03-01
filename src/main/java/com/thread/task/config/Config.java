@@ -11,7 +11,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class Config {
 
     @Bean
-    public BlockingQueue<Number> queue(){
+    public BlockingQueue<Number> queue() {
         return new LinkedBlockingQueue<>(20);
     }
 }

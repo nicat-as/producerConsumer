@@ -1,7 +1,6 @@
 package com.thread.task.repository;
 
 import com.thread.task.domain.Number;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

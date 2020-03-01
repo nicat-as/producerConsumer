@@ -28,8 +28,8 @@ public class Api {
     @GetMapping("/number")
     public ResponseEntity<List<Number>> getAll() {
         List<Number> numbers = numbersRepository.findAll();
-        if (numbers.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Number list is empty!");
+        if (numbers.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Number list is empty!");
         }
         return new ResponseEntity<>(numbers, HttpStatus.OK);
     }
@@ -49,8 +49,8 @@ public class Api {
     @PostMapping("/number")
     public ResponseEntity<Number> add(@RequestBody Number number) {
         number = numbersRepository.save(number);
-        if (number==null){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,"Number not added!");
+        if (number == null) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Number not added!");
         }
         return new ResponseEntity<>(number, HttpStatus.CREATED);
     }
@@ -61,8 +61,8 @@ public class Api {
             status = 0;
         }
         List<Number> numbers = numbersRepository.getNumberStatus(status);
-        if (numbers.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"status id is wrong!");
+        if (numbers.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "status id is wrong!");
         }
         return new ResponseEntity<>(numbers, HttpStatus.OK);
     }
@@ -70,7 +70,7 @@ public class Api {
     @PutMapping("/status/{id}")
     public ResponseEntity<Integer> updateStatus(@PathVariable(name = "id") long id) {
         int count = numbersRepository.setStatus(id);
-        if (count<=0){
+        if (count <= 0) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(count, HttpStatus.CREATED);

@@ -27,7 +27,7 @@ public class TaskApplication {
 
 
     @PostConstruct
-    public void add(){
+    public void add() {
         //These are dump data for testing
         numbersRepository.save(new Number("0553669898"));
         numbersRepository.save(new Number("0504748124"));
@@ -53,7 +53,6 @@ public class TaskApplication {
     public static void main(String[] args) {
         SpringApplication.run(TaskApplication.class, args);
     }
-
 
 
 }

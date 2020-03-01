@@ -26,17 +26,17 @@ public class Consumer implements Runnable {
 
     @Override
     public void run() {
-            try {
-                Number number = queue.take();
-                Optional<Number> numberOptional = Optional.of(number);
-                if (numberOptional.isPresent()) {
-                    System.out.println("Number is taken : " + number);
-                    numbersRepository.setStatus(number.getId());
-                }else {
-                    System.out.println("There is no number in queue for consuming!!");
-                }
-            }catch (Exception e){
-
+        try {
+            Number number = queue.take();
+            Optional<Number> numberOptional = Optional.of(number);
+            if (numberOptional.isPresent()) {
+                System.out.println("Number is taken : " + number);
+                numbersRepository.setStatus(number.getId());
+            } else {
+                System.out.println("There is no number in queue for consuming!!");
             }
+        } catch (Exception e) {
+
+        }
     }
 }

@@ -18,10 +18,10 @@ public class Number {
     private String number;
 
     @Column(columnDefinition = "int not null")
-    private Integer status=1;
+    private Integer status = 1;
 
     public Number(String number) {
-        this.number= number;
+        this.number = number;
     }
 
     public Number() {
